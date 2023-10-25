@@ -5,8 +5,19 @@ export default defineNuxtConfig({
     "@nuxtjs/tailwindcss",
     "nuxt-headlessui",
     "nuxt-icon",
+    "@nuxt/image",
+    "@nuxtjs/google-fonts",
   ],
-
+  googleFonts: {
+    families: {
+      Poppins: true,
+      Raleway: {
+        wght: [100, 400],
+        ital: [100],
+      },
+      subsets:['latin']
+    },
+  },
   headlessui: {
     prefix: "Headless",
   },
