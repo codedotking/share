@@ -4,14 +4,35 @@ import dayjs from "dayjs";
 
 export default defineEventHandler(async (event) => {
   const files = await readMultipartFormData(event);
-  if (!files) {
-    return {
-      notFound: true,
-    };
+  
+  if (!files || files.length === 0) {
+    throw createError({
+      statusCode: 400,
+      statusMessage: "No files were uploaded",
+    });
   }
-  console.log(files[0]);
-  const [ file ] = files;
-  const [, suffix] = file.name.split(".");
+
+  const uploaded = files.map((item) => ({
+    contentType: item.type,
+    filename: decodeURIComponent(item.filename!),
+    name: item.name,
+    size: item.data.length,
+  }));
+
+  // const [file] = files;
+  // const { type = "", data: buffer } = file;
+  // if (!["image/png", "image/jpg"].includes(type)) {
+  //   return {
+  //     code: 400,
+  //     msg: "只支持 png 和 jpg",
+  //   };
+  // }
+
+  // const [, suffix] = type.split("/");
+  return {
+    files,
+    // suffix,
+  };
   const conf = {
     owner: "hualafun",
     repo: "storage",
@@ -24,6 +45,7 @@ export default defineEventHandler(async (event) => {
   const { owner, repo } = conf;
   const filename = `${uuidv4()}.${suffix}`;
   const uploadPath = `/repos/${owner}/${repo}/contents/${path}/${filename}`;
+  // upload
   await octokit.request("PUT /repos/{owner}/{repo}/contents/{path}", {
     owner: "OWNER",
     repo: "REPO",
@@ -33,7 +55,7 @@ export default defineEventHandler(async (event) => {
       name: "Monalisa Octocat",
       email: "hualafun@gmail.com",
     },
-    content: "bXkgbmV3IGZpbGUgY29udGVudHM=",
+    content: buffer.toString("base64"),
     headers: {
       "X-GitHub-Api-Version": "2022-11-28",
     },

@@ -13,6 +13,7 @@
     "@nuxt/devtools": "latest",
     "@tailwindcss/forms": "^0.5.6",
     "@tailwindcss/typography": "^0.5.10",
+    "@types/uuid": "^9.0.6",
     "@vueuse/nuxt": "^10.5.0",
     "nuxt": "^3.8.0",
     "nuxt-headlessui": "^1.1.4",
@@ -27,14 +28,9 @@
     "@upstash/redis": "^1.23.4",
     "dayjs": "^1.11.10",
     "floating-vue": "2.0.0-beta.24",
+    "formidable": "^3.5.1",
     "js-base64": "^3.7.5",
     "uuid": "^9.0.1",
     "vuedraggable": "^4.1.0"
-  },
-  "config": {
-    "nuxt": {
-      "host": "0.0.0.0",
-      "port": "3000"
-    }
   }
 }
