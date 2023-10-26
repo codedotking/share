@@ -25,6 +25,7 @@
     "@nuxt/image": "^1.0.0",
     "@nuxt/ui": "^2.9.0",
     "@octokit/core": "^5.0.1",
+    "@types/formidable": "^3.4.4",
     "@upstash/redis": "^1.23.4",
     "dayjs": "^1.11.10",
     "floating-vue": "2.0.0-beta.24",
