@@ -6,7 +6,7 @@ export default {
   future: {
     hoverOnlyWhenSupported: true,
   },
-  plugins: [require("@tailwindcss/forms")],
+  plugins: [require("@tailwindcss/forms"), require("@tailwindcss/typography")],
   content: [
     `components/**/*.{vue,js}`,
     `layouts/**/*.vue`,
