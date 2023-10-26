@@ -1,8 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  theme: {
-    extend: {},
-  },
+  darkMode: 'media', // 跟随系统
   future: {
     hoverOnlyWhenSupported: true,
   },

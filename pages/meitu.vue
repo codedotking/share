@@ -3,19 +3,20 @@
     <div class="columns-1 gap-4 sm:columns-2 xl:columns-3 2xl:columns-4">
       <!-- 个人介绍 -->
       <section
-        class="after:content relative mb-5 flex h-[629px] flex-col items-center justify-end gap-4 overflow-hidden rounded-lg bg-white/10 px-6 pb-16 pt-64 text-center text-white shadow-highlight after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:shadow-highlight lg:pt-0"
+        class="bg-black after:content relative mb-5 flex h-[629px] flex-col items-center justify-center gap-4 overflow-hidden rounded-lg bg-white/10 px-6 pb-16 pt-64 text-center text-white shadow-highlight after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:shadow-highlight lg:pt-0"
       >
-        <div
-          class="absolute inset-0 flex items-center justify-center opacity-20"
-        >
+        <div class="inset-0 flex items-center justify-center opacity-20">
           <span class="flex max-h-full max-w-full items-center justify-center">
-            <IconsBridge />
+            <UAvatar
+              size="3xl"
+              src="https://avatars.githubusercontent.com/u/739984?v=4"
+              alt="Avatar"
+            />
           </span>
           <span
             class="absolute left-0 right-0 bottom-0 h-[400px] bg-gradient-to-b from-black/0 via-black to-black"
           ></span>
         </div>
-        <IconsLogo />
         <h1 class="mt-8 mb-4 text-base font-bold uppercase tracking-widest">
           2022 Event Photos
         </h1>
@@ -23,13 +24,12 @@
           Our incredible Next.js community got together in San Francisco for our
           first ever in-person conference!
         </p>
-        <a
-          class="pointer z-10 mt-6 rounded-lg border border-white bg-white px-3 py-2 text-sm font-semibold text-black transition hover:bg-white/10 hover:text-white md:mt-4"
-          target="_blank"
-          rel="noreferrer"
+        <NuxtLink
+          href="/"
+          class="cursor-pointer z-10 mt-6 rounded-lg border border-white bg-white px-3 py-2 text-sm font-semibold text-black transition hover:bg-white/10 hover:text-white md:mt-4"
         >
-          Clone and Deploy
-        </a>
+          返回主页
+        </NuxtLink>
       </section>
 
       <NuxtLink
