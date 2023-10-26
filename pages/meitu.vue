@@ -58,7 +58,9 @@
     </div>
   </main>
 
-  <UModal v-model="isOpen">
+  <UModal v-model="isOpen" :ui=" {
+  'background': 'bg-white dark:bg-slate-900'
+}">
     <NuxtImg
       alt="Next.js Conf photo"
       class="transform rounded-lg brightness-90 transition will-change-auto group-hover:brightness-110"
@@ -88,6 +90,7 @@ const toImageUrl = ({ public_id, format }) => {
 const isOpen = ref(false);
 
 const image = ref({});
+
 
 const showImage = (item) => {
   image.value = item;
