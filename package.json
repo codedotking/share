@@ -29,7 +29,7 @@
     "@upstash/redis": "^1.23.4",
     "dayjs": "^1.11.10",
     "floating-vue": "2.0.0-beta.24",
-    "formidable": "^3.5.1",
+    "h3-formidable": "^1.0.0",
     "js-base64": "^3.7.5",
     "uuid": "^9.0.1",
     "vuedraggable": "^4.1.0"

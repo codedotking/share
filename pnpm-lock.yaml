@@ -26,9 +26,9 @@ dependencies:
   floating-vue:
     specifier: 2.0.0-beta.24
     version: 2.0.0-beta.24(vue@3.3.6)
-  formidable:
-    specifier: ^3.5.1
-    version: 3.5.1
+  h3-formidable:
+    specifier: ^1.0.0
+    version: 1.0.0(h3@1.8.2)
   js-base64:
     specifier: ^3.7.5
     version: 3.7.5
@@ -4091,6 +4091,15 @@ packages:
     dependencies:
       duplexer: 0.1.2
     dev: true
+
+  /h3-formidable@1.0.0(h3@1.8.2):
+    resolution: {integrity: sha512-RZf0e17Q1tGFc60KJb9BrptcbSnO75r/YhyQ5OtEjvAimhYY80M1yVDu2DldwcnXvYYngxAcvGOG7xihJldfzg==}
+    peerDependencies:
+      h3: ^1.8.0
+    dependencies:
+      formidable: 3.5.1
+      h3: 1.8.2
+    dev: false
 
   /h3@1.8.2:
     resolution: {integrity: sha512-1Ca0orJJlCaiFY68BvzQtP2lKLk46kcLAxVM8JgYbtm2cUg6IY7pjpYgWMwUvDO9QI30N5JAukOKoT8KD3Q0PQ==}
