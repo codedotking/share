@@ -40,29 +40,24 @@ export default defineEventHandler(async (event) => {
   });
   const { owner, repo } = conf;
   const filename = `${uuidv4()}.${suffix}`;
-  const uploadPath = `/repos/${owner}/${repo}/contents/${name}/${filename}`;
-  try {
-    // upload
-    await octokit.request(`PUT ${uploadPath}`, {
-      owner,
-      repo,
-      path: `${name}`,
-      message: uploadPath,
-      committer: {
-        name: "Monalisa Octocat",
-        email: "hualafun@gmail.com",
-      },
-      content: base64,
-      headers: {
-        "X-GitHub-Api-Version": "2022-11-28",
-      },
-    });
-    return {
-      uploadPath,
-    };
-  } catch (e) {
-    return {
-      error: JSON.stringify(e),
-    };
-  }
+  const uploadPath = `/repos/${owner}/${repo}/contents/share/${name}/${filename}`;
+  // upload
+  await octokit.request(`PUT ${uploadPath}`, {
+    owner,
+    repo,
+    path: `share/${name}`,
+    message: uploadPath,
+    committer: {
+      name: "Monalisa Octocat",
+      email: "hualafun@gmail.com",
+    },
+    content: base64,
+    headers: {
+      "X-GitHub-Api-Version": "2022-11-28",
+    },
+  });
+
+  return {
+    uploadPath,
+  };
 });
