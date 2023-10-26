@@ -18,11 +18,10 @@
           ></span>
         </div>
         <h1 class="mt-8 mb-4 text-base font-bold uppercase tracking-widest">
-          2022 Event Photos
+         哗啦作品集
         </h1>
         <p class="max-w-[40ch] text-white/75 sm:max-w-[32ch]">
-          Our incredible Next.js community got together in San Francisco for our
-          first ever in-person conference!
+          旅游随拍
         </p>
         <NuxtLink
           href="/"
